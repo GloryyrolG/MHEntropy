@@ -1,0 +1,70 @@
+        <h2 id="abstract">
+            Abstract
+        </h2>
+        <p>
+            We present an approach for 3D global human mesh recovery from monocular videos recorded with dynamic cameras. Our approach is robust to severe and long-term occlusions and tracks human bodies even when they go outside the camera's field of view. To achieve this, we first propose a deep generative motion infiller, which autoregressively infills the body motions of occluded humans based on visible motions. Additionally, in contrast to prior work, our approach reconstructs human meshes in consistent global coordinates even with dynamic cameras. Since the joint reconstruction of human motions and camera poses is underconstrained, we propose a global trajectory predictor that generates global human trajectories based on local body movements. Using the predicted trajectories as anchors, we present a global optimization framework that refines the predicted trajectories and optimizes the camera poses to match the video evidence such as 2D keypoints. Experiments on challenging indoor and in-the-wild datasets with dynamic cameras demonstrate that the proposed approach outperforms prior methods significantly in terms of motion infilling and global mesh recovery.
+        </p>
+
+        <h2 id="results">
+            Results
+        </h2>
+
+        <h3 class="results">
+            In-The-Wild Videos with Dynamic Cameras (vs. SOTA <a href="https://jeffli.site/HybrIK/" target="_blank">HybrIK</a>)
+        </h3>
+        <video class="centered shadow video_without_cap" width="100%" autoplay muted loop playsinline>
+            <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+            <source src="assets/media/running_entropy_vs_hybrik.mp4#t=0.001" type="video/mp4" />
+        </video>
+
+        <h3 class="results">
+            In-The-Wild Videos with Static Cameras (vs. SOTA <a href="https://jeffli.site/HybrIK/" target="_blank">HybrIK</a>)
+        </h3>
+        <video class="centered shadow video_without_cap" width="100%" autoplay muted loop playsinline>
+            <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+            <source src="assets/media/basketball_entropy_vs_hybrik.mp4#t=0.001" type="video/mp4" />
+        </video>
+        <video class="centered shadow video_without_cap" width="100%" autoplay muted loop playsinline>
+            <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+            <source src="assets/media/WalkingAround_Joe_entropy_vs_hybrik.mp4#t=0.001" type="video/mp4" />
+        </video>
+
+        <h3 class="results" id="sample">
+            Generative Motion Infilling with Multiple Samples
+        </h3>
+        <video class="centered shadow" width="100%" autoplay muted loop playsinline>
+            <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+            <source src="assets/media/entropy_sample.mp4#t=0.001" type="video/mp4" />
+        </video>
+        <div class="videocaption">
+            <div>Entropy uses generative motion infiller to infill multiple plausible motions for invisible people.</div>
+        </div>
+
+        <h3 class="results">
+            3DPW Sequences
+        </h3>
+        <video class="centered shadow video_without_cap" width="100%" autoplay muted loop playsinline>
+            <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+            <source src="assets/media/entropy_res1.mp4#t=0.001" type="video/mp4" />
+        </video>
+        <video class="centered shadow video_without_cap" width="100%" autoplay muted loop playsinline>
+            <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+            <source src="assets/media/entropy_res2.mp4#t=0.001" type="video/mp4" />
+        </video>
+        <video class="centered shadow video_without_cap" width="100%" autoplay muted loop playsinline>
+            <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+            <source src="assets/media/entropy_res3.mp4#t=0.001" type="video/mp4" />
+        </video>
+        
+        
+        <h2>
+            Narrated Results Video
+        </h2>
+        <div class="videoWrapper shadow">
+            <iframe width="705" height="397" border-style=none src="https://www.youtube.com/embed/wpObDXcYueo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <h2>
+            Overview
+        </h2>
+        <img class="figure" src="assets/media/entropy_overview.png" alt="Entropy Overview">

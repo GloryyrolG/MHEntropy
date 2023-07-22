@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="assets/media/favicon.ico" rel="shortcut icon" />
+    <title>
+        Entropy: Global Occlusion-Aware Human Mesh Recovery with Dynamic Cameras
+    </title>
+    <meta content="Entropy" property="og:title" />
+    <meta content="We present an approach for 3D global human mesh recovery from monocular videos recorded with dynamic cameras. Our approach is robust to severe and long-term occlusions and tracks human bodies even when they go outside the camera's field of view. To achieve this, we first propose a deep generative motion infiller, which autoregressively infills the body motions of occluded humans based on visible motions. Additionally, in contrast to prior work, our approach reconstructs human meshes in consistent global coordinates even with dynamic cameras. Since the joint reconstruction of human motions and camera poses is underconstrained, we propose a global trajectory predictor that generates global human trajectories based on local body movements. Using the predicted trajectories as anchors, we present a global optimization framework that refines the predicted trajectories and optimizes the camera poses to match the video evidence such as 2D keypoints. Experiments on challenging indoor and in-the-wild datasets with dynamic cameras demonstrate that the proposed approach outperforms prior methods significantly in terms of motion infilling and global mesh recovery." name="description" property="og:description" />
+    <meta content="https://gloryyrolg.github.io/Entropy" property="og:url" />
+    <meta name="keywords" content="Human Pose Estimation, Human Mesh Recovery, Entropy">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <script defer src="assets/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+    <div class="n-header">
+    </div>
+    <div class="n-title">
+        <h1>
+            Multiple Hypotheses Meet <u>Entropy</u> for Pose and Shape Recovery
+        </h1>
+    </div>
+    <div class="n-byline">
+        <div class="byline">
+            <ul class="authors">
+                <li>
+                    <a href="" target="_blank">Rongyu Chen*</a>
+                    <!-- <sup>1, 2</sup> -->
+                </li>
+                <li>
+                    <a href="" target="_blank">Linlin Yang*</a>
+                    <!-- <sup>1</sup> -->
+                </li>
+                <li>
+                    <a href="" target="_blank">Angela Yao†</a>
+                    <!-- <sup>1</sup> -->
+                </li>
+            </ul>
+            <ul class="authors affiliations">
+                <li>
+                    <!-- <sup>
+                        1
+                    </sup> -->
+                    National University of Singapore
+                </li>
+            </ul>
+            <ul class="authors venue">
+                <li>
+                    ICCV 2023
+                </li>
+            </ul>
+            <ul class="authors links">
+                <li>
+                    <a href="" target="_blank">
+                        <button class="btn"><i class="fa fa-file-pdf"></i> Paper</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <button class="btn"><i class="fab fa-youtube fa-w-18"></i> Video</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/gloryyrolg/Entropy" target="_blank">
+                        <button class="btn"><i class="fab fa-github"></i> Code</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="n-article">
+        <div class="n-page video">
+            <!-- <video class="centered shadow" width="100%" autoplay muted loop playsinline> -->
+                <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+                <!-- <source src="assets/media/entropy_teaser.mp4#t=0.001" type="video/mp4" /> -->
+            <!-- </video> -->
+            <div class="videocaption" style="margin-bottom: 1rem">
+                <div>
+                    <!-- Entropy (Left) recovers human meshes in consistent <span class="emph">global</span> coordinates from videos captured by <span class="emph">dynamic cameras</span> and <span class="emph">infills</span> missing poses (transparent) due to various
+                    occlusions (obstruction, missed detection, outside field of view), while standard human mesh recovery methods (Right) fail to do so. -->
+                </div>   
+            </div>
+        </div>
+
+        <h2 id="citation">
+            Citation
+        </h2>
+        <pre class="bibtex">
+            <code>
+@inproceedings{chenyang2023Entropy,
+  title={Multiple Hypotheses Meet Entropy for Pose and Shape Recovery},
+  author={Chen, Rongyu and Yang, Linlin and Yao, Angela},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year={2023}
+}
+            </code></pre>
+
+    </div>
+</body>
+
+</html>
