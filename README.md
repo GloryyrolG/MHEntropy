@@ -1,5 +1,9 @@
 # Entropy. The Official PyTorch Implementation of "Multiple Hypotheses Meet Entropy for Pose and Shape Recovery" [(ICCV 2023 Paper)]()
 
+Rongyu Chen*, Linlin Yang*, and Angela Yao†<br>
+ICCV 2023<br>
+paper | [website](https://gloryyrolg.github.io/Entropy/)
+
 Thanks for your interests. The code and models are coming soon...
 
 ## Bibtex:
