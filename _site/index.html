@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- <link href="assets/media/favicon.ico" rel="shortcut icon" /> -->
     <title>
-        MHEntropy: Multiple Hypotheses Meet Entropy for Pose and Shape Recovery
+        MHEntropy: Entropy Meets Multiple Hypotheses for Pose and Shape Recovery
     </title>
     <meta content="MHEntropy" property="og:title" />
     <!-- <meta content="We present an approach for 3D global human mesh recovery from monocular videos recorded with dynamic cameras. Our approach is robust to severe and long-term occlusions and tracks human bodies even when they go outside the camera's field of view. To achieve this, we first propose a deep generative motion infiller, which autoregressively infills the body motions of occluded humans based on visible motions. Additionally, in contrast to prior work, our approach reconstructs human meshes in consistent global coordinates even with dynamic cameras. Since the joint reconstruction of human motions and camera poses is underconstrained, we propose a global trajectory predictor that generates global human trajectories based on local body movements. Using the predicted trajectories as anchors, we present a global optimization framework that refines the predicted trajectories and optimizes the camera poses to match the video evidence such as 2D keypoints. Experiments on challenging indoor and in-the-wild datasets with dynamic cameras demonstrate that the proposed approach outperforms prior methods significantly in terms of motion infilling and global mesh recovery." name="description" property="og:description" /> -->
@@ -25,22 +25,23 @@
     </div>
     <div class="n-title">
         <h1>
-            MHEntropy: Multiple Hypotheses Meet Entropy for Pose and Shape Recovery
+            MHEntropy: <u>Entropy</u> Meets <u>M</u>ultiple <u>H</u>ypotheses for Pose and Shape Recovery
+            <!-- MHEntropy: Entropy Meets Multiple Hypotheses for Pose and Shape Recovery -->
         </h1>
     </div>
     <div class="n-byline">
         <div class="byline">
             <ul class="authors">
                 <li>
-                    <a href="" target="_blank">Rongyu Chen*</a>
+                    <a href="https://gloryyrolg.github.io/" target="_blank">Rongyu CHEN*</a>
                     <!-- <sup>1, 2</sup> -->
                 </li>
                 <li>
-                    <a href="" target="_blank">Linlin Yang*</a>
+                    <a href="https://www.mu4yang.com/" target="_blank">Linlin YANG*</a>
                     <!-- <sup>1</sup> -->
                 </li>
                 <li>
-                    <a href="" target="_blank">Angela Yao†</a>
+                    <a href="https://www.comp.nus.edu.sg/~ayao/" target="_blank">Angela YAO</a>
                     <!-- <sup>1</sup> -->
                 </li>
             </ul>
@@ -49,28 +50,35 @@
                     <!-- <sup>
                         1
                     </sup> -->
-                    National University of Singapore
+                    <a href="https://cvml.comp.nus.edu.sg/" target="_blank">
+                    Computer Vision & Machine Learning Group, School of Computing, National University of Singapore
+                    </a>
                 </li>
             </ul>
             <ul class="authors venue">
                 <li>
-                    ICCV 2023
+                    IEEE/CVF International Conference on Computer Vision (ICCV) 2023
                 </li>
             </ul>
             <ul class="authors links">
                 <li>
-                    <a href="" target="_blank">
+                    <a href="assets/media/mhentropy_pdf.pdf" target="_blank">
                         <button class="btn"><i class="fa fa-file-pdf"></i> Paper</button>
                     </a>
                 </li>
-                <li>
-                    <a href="" target="_blank">
+                <!-- <li>
+                    <a href="https://www.youtube.com/watch?v=0riX3iJeVyM" target="_blank">
                         <button class="btn"><i class="fab fa-youtube fa-w-18"></i> Video</button>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="https://github.com/gloryyrolg/MHEntropy" target="_blank">
                         <button class="btn"><i class="fab fa-github"></i> Code</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="assets/media/mhentropy_slides.pdf" target="_blank">
+                        <button class="btn"><i class="fa fa-file-pdf"></i> Slides</button>
                     </a>
                 </li>
             </ul>
@@ -91,13 +99,32 @@
             </div>
         </div>
 
+        <h2 id="abstract">
+            Abstract
+        </h2>
+        <p>
+            For monocular RGB-based 3D pose and shape estimation, multiple solutions are often feasible due to factors like occlusions and truncations. This work presents a multi-hypothesis probabilistic framework by optimizing the Kullback–Leibler divergence (KLD) between the data and model distribution. Our formulation reveals a connection between the pose entropy and diversity in the multiple hypotheses that has been neglected by previous works. For a comprehensive evaluation, besides the best hypothesis (BH) metric, we factor in visibility for evaluating diversity. Additionally, our framework is label-friendly – it can be learned from only partial 2D keypoints, such as visible keypoints. Experiments on both ambiguous and realworld benchmarks demonstrate that our method outperforms other state-of-the-art multi-hypothesis methods.
+        </p>
+
+        <h2>
+            Poster
+        </h2>
+        <embed src="assets/media/mhentropy_poster.pdf" width="100%" height="550px" />
+
+        <h2>
+            Presentation
+        </h2>
+        <div class="videoWrapper shadow">
+            <iframe width="705" height="397" border-style=none src="https://www.youtube.com/embed/0riX3iJeVyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
         <h2 id="citation">
             Citation
         </h2>
         <pre class="bibtex">
             <code>
 @inproceedings{chenyang2023MHEntropy,
-  title={MHEntropy: Multiple Hypotheses Meet Entropy for Pose and Shape Recovery},
+  title={ {MHEntropy}: Entropy Meets Multiple Hypotheses for Pose and Shape Recovery},
   author={Chen, Rongyu and Yang, Linlin and Yao, Angela},
   booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
   year={2023}
