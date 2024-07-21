@@ -1,6 +1,7 @@
 # The Official PyTorch Implementation of "MHEntropy: Multiple Hypotheses Meet Entropy for Pose and Shape Recovery" [(ICCV 2023 Paper)]()
 
-Rongyu Chen, Linlin Yang*, and Angela Yao<br>
+[Rongyu Chen](https://gloryyrolg.github.io/), [Linlin Yang*](https://mu4yang.com/), and [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)<br>
+[National University of Singapore, School of Computing, Computer Vision & Machine Learning (CVML) Group](https://cvml.comp.nus.edu.sg/)<br>
 ICCV 2023<br>
 [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_MHEntropy_Entropy_Meets_Multiple_Hypotheses_for_Pose_and_Shape_Recovery_ICCV_2023_paper.pdf) | [website](https://gloryyrolg.github.io/MHEntropy/)
 
