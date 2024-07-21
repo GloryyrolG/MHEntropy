@@ -14,7 +14,7 @@ conda env create -f environment.yml  # run the cmd under ./hand/
 
 **NOTE:** It seems that several images in the HO3D dataset are incorrectly annotated.
 
-Please download the HO3D V3 dataset from the [official website](https://cloud.tugraz.at/index.php/s/z8SCsWCYM3YcQWX?), and arrange it in `./datasets/` according to [the snippet](github.com/GloryyrolG/MHEntropy/blob/master/hand/dataloader/ho3d_dataloader.py?plain=1#L21):
+Please download the HO3D V3 dataset from the [official website](https://cloud.tugraz.at/index.php/s/z8SCsWCYM3YcQWX?), and arrange it in `./datasets/` according to [the snippet](https://github.com/GloryyrolG/MHEntropy/blob/master/hand/dataloader/ho3d_dataloader.py?plain=1#L21):
 
 ```python
 data_root = './datasets/HO3D_v3/HO3D_v3/'
