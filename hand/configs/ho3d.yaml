@@ -1,0 +1,64 @@
+info_interval: 500
+save_interval: 5  # 20
+eval_interval: 2  # 5
+
+dataset:
+  dataset_name: ho3d  # rhd
+  image_size: [256, 256]
+  range_: [[-5., -5., -5.], [5., 5., 5.]]
+  pe: 3d
+  jointN: 21
+
+network:
+  # Enc.
+  enc_type: MHEnt
+  input: image
+  num_latent: 512  # 64
+  nums_latent: null  # null
+  backbone: resnet50  # 18
+  resnet_pretrained: true
+  conditional_p: false
+  conditional_i: false
+  feat_dim: null
+  acts: exp  # exp
+  deterministic: false
+  # Dec.
+  decoder_type: id  # mlp
+  pgm: null  # inv_prob
+  p_nf_dim: 63
+  # RLE.
+  tsfm_on: 512  # null
+  cond_mapping_dims: null  # [[64, 672], [2048, 672]]
+  nf_res: null  # rle
+  # NFs.
+  h_dims: [512, 512]  # [256, 256]  # [64, 64]
+  num_steps: 6  # 3
+  kemb: false
+  p_nf: null
+  # MHEntropy
+  regressor: realnvp
+  rot_prior: null
+  w_reg_th: 50
+  w_prior_2d: 0
+  w_reg_ds: 0  # 10000
+  b_2d: 0.03
+  entropy: true
+  mode: false
+
+training:
+  mode: baseline_VAE
+  batch_size: 64
+  seed: null
+  view_correction: False
+  num_workers: 8
+  pth: ./model/ent_ho3d.pth  # ./model/8xN1l1/baseline_final.pth  # null
+  load_mod_names: null  # ['encoderRGB']  # null
+  epochs: 0  # 260
+  lr: 0.0002
+  milestones: [150, 250]
+  warmups: 0
+  criterion: MHEntLoss
+  test_samples: 200
+
+loss:
+  kl: 0.  # 0.0001, 0.
