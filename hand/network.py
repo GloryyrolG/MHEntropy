@@ -60,13 +60,13 @@ class BasicEnc(nn.Module):
         # Simplify.
         self.res.fc = nn.Identity()
 
-		#TODO: deprecate conditional_p.
+        #TODO: deprecate conditional_p.
         in_dim = 1000
         self.conditional_p = conditional_p
         if self.conditional_p:
             in_dim += K * D
 
-		# Connectors.
+        # Connectors.
         self.preavgpool = None  # placeholder impl
         self.l = nn.Identity()
         
@@ -372,7 +372,7 @@ class MHEnt(nn.Module):
         }
         self.z_dim = sum([v for k, v in self.zdims.items() if not self.zdets[k]])
 
-		# q(z|I)
+        # q(z|I)
         feat_dim = 512  # self.feat_extractor.n_latent[0]
         det_head_hdim = feat_dim
         det_head_odim = sum([v for k, v in self.zdims.items() if self.zdets[k]])

@@ -272,7 +272,7 @@ class CrossModalHand():
                         raise NotImplementedError
                     logvar = combine_flow_cond(z=z_rgb, f=self.encoderRGB._feat)
 
-				# Smooth the rel pose, esp for the root.
+                # Smooth the rel pose, esp for the root.
                 tld_pose_gt = pose_gt + torch.randn_like(pose_gt) * 1e-4
                 if isinstance(self.p_nf, RealNVP):
                     output['log_p'] = output['log_phi'] = self.p_nf.log_prob(
