@@ -55,6 +55,8 @@ to reproduce the results:
 
 `RD`: Relative Diversity.
 
+[<img src="../assets/log.png" width="300"/>]()![]()
+
 ### Qualitative Visualization
 
 You could leverage any [3D viewer VSCode extensions](https://github.com/stef-levesque/vscode-3dviewer) and [MeshLab](https://www.meshlab.net/) GUI to interact with 3D models.
