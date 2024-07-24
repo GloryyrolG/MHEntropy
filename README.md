@@ -5,7 +5,9 @@
 ICCV 2023<br>
 [paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_MHEntropy_Entropy_Meets_Multiple_Hypotheses_for_Pose_and_Shape_Recovery_ICCV_2023_paper.pdf) | [website](https://gloryyrolg.github.io/MHEntropy/)
 
-Thanks for your interests.
+Thanks for your interest.
+
+We mainly tackle the problem of using **only visible 2D** keypoints that are easy to annotate to train the HMR model to model **ambiguity** (occlusion, depth ambiguity, etc.) and generate multiple feasible, accurate, and diverse hypos. It also answers "*how generative models help discriminative tasks*". The key idea is that using knowledge rather than data samples to define the target data distribution under a probabilistic framework, KLD will naturally derive a missing **entropy** term.
 
 [<img src="./assets/framework.png" width="800"/>]()
 

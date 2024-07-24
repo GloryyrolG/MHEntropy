@@ -410,10 +410,6 @@ class MHEnt(nn.Module):
                 **{'in_dim': feat_dim, 'out_dim': common_cfg['K'] * 3})
 
         self.p_ys = {}
-        if data_prior_cfg.get('w_prior_2d', None):
-            self.p_ys['uv'] = self.p_uv = RealNVP(dim=common_cfg['K'] * 2, jointN=common_cfg['K'],
-                                                  h_dims=[256, 256], num_steps=10)  # orig: 512 for 3d
-            self.loss_weights['p_uv'] = data_prior_cfg.get('w_prior_2d', 1)
 
         #########
 
@@ -639,34 +635,14 @@ class MHEnt(nn.Module):
             _y = mu  # self.p_y_giv_mus[mod].sample(mu, feat=feat)
             y_ = y[{'uv': 'crop_uv', 'xyz': 'pose3d'}[mod]]
             D = {'uv': 2, 'xyz': 3}[mod]
-            weights = None
-            # if kwargs.get('vis_w', True):
-            #     weights = y['vis'][..., None].repeat(N, 1, D).flatten(start_dim=-2) 
+            # weights = None
+            if kwargs.get('vis_w', True):
+                weights = y['vis'][..., None].repeat(N, 1, D).flatten(start_dim=-2) 
             output[f'log_p_{mod}_giv_z'] = self.p_y_giv_ys[mod].log_prob(
                 y_.repeat(N, 1), _y, feat=feat, weights=weights,)
                 # **{'patch': y['patch'].repeat(N, 1)})
             
-            # Data prior.
-            if self.p_ys.get(mod, None) is not None:  # should not use getattr for dict!
-                assert mod == 'uv'
-                # Train together.
-                self.p_ys[mod].requires_grad_(False)
-                training = self.p_ys[mod].training
-                self.p_ys[mod].eval()
-                uv_wo_rot = ((_y + 1) * 128).reshape(*_y.shape[: -1], -1, 2)
-                # uv_wo_rot = torch.cat([uv_wo_rot,
-                #                        torch.ones(*uv_wo_rot.shape[: -1], 1, device='cuda')], dim=-1)
-                # uv_wo_rot = uv_wo_rot.matmul(y['rot_mat_inv']).flatten(-2)
-                uv_wo_rot = uv_wo_rot / 256 * 2 - 1
-                uv_wo_rot = uv_wo_rot - uv_wo_rot[:, [12]]
-                uv_wo_rot = uv_wo_rot.flatten(-2)
-                output[f'log_p_{mod}'] = self.loss_weights[f'p_{mod}'] * self.p_ys[mod].log_prob(
-                    uv_wo_rot + torch.randn_like(uv_wo_rot) * 1e-4)
-                if training:
-                    self.p_ys[mod].train()
-                self.p_ys[mod].requires_grad_(True)
-            
-         # q(\theta,\beta,s,t|I)\log p(\theta,\beta,s,t).
+        # q(\theta,\beta,s,t|I)\log p(\theta,\beta,s,t).
         th3, th45, bt, logs, t = z[:, : 3], z[:, 3: 48], z[:, 48: 58], z[:, [-3]], z[:, -2:]
         for param_s in self.zdims:
             if param_s in use_gt:
@@ -816,13 +792,6 @@ class MHEnt(nn.Module):
         # Reconst.
         output['q_log_p_z_giv_y'] = q_log_p_d['log_p'].reshape(N, -1).mean(0)
         
-        if getattr(self, 'best_mode', False):
-            z_b = self._sample_q_z_giv_i(feat, temp=0, y=y)
-            qb_log_p_d = self._forward_log_p(z_b, y, mods=mods, feat=feat,)
-                                            #  **{'vis_w': False})
-            output['q_log_p_zb_giv_y'] = qb_log_p_d['log_p']
-            output['log_p'] = output['log_p'] + output['q_log_p_zb_giv_y']
-
         # Entropy.
         if self.entropy:
             kwargs = {}
