@@ -351,7 +351,7 @@ class CrossModalHand():
                 input = target['crop_uv'] * (target['vis'] == 1).repeat_interleave(2, dim=1)
             else:
                 input = image
-            mods = ['xyz', 'uv']
+            mods = ['uv']  # weak sup. ['xyz', 'uv']
             output = self.encoderRGB.get_loss(
                 input, target, div_type=0, mods=mods)
             with torch.no_grad():
