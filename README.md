@@ -3,7 +3,8 @@
 [Rongyu Chen](https://gloryyrolg.github.io/), [Linlin Yang*](https://mu4yang.com/), and [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)<br>
 [National University of Singapore, School of Computing, Computer Vision & Machine Learning (CVML) Group](https://cvml.comp.nus.edu.sg/)<br>
 ICCV 2023<br>
-[paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_MHEntropy_Entropy_Meets_Multiple_Hypotheses_for_Pose_and_Shape_Recovery_ICCV_2023_paper.pdf) | [website](https://gloryyrolg.github.io/MHEntropy/)
+
+<a href='https://gloryyrolg.github.io/MHEntropy/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_MHEntropy_Entropy_Meets_Multiple_Hypotheses_for_Pose_and_Shape_Recovery_ICCV_2023_paper.pdf'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=0riX3iJeVyM)
 
 Thanks for your interest.
 
