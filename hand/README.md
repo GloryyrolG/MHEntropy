@@ -1,6 +1,6 @@
 # MHEntropy on HO3D
 
-[<img src="../assets/teaser.png" width="300"/>]()
+<p align="center"><img src="../assets/teaser.png" width="300"></p>
 
 ## Installation
 
@@ -23,13 +23,13 @@ gt_root = './datasets/HO3D_v3/HO3D/data/'
 seg_root = './datasets/HO3D_v3/'
 ```
 
-**Visibility** is annotated in the `data.Dataset`.
+**Visibility** is annotated in the [`data.Dataset`](https://github.com/GloryyrolG/MHEntropy/blob/master/hand/dataloader/ho3d_dataloader.py?plain=1#L360).
 
 ## MHEntropy
 
-[<img src="../assets/framework.png" width="800"/>]()![]()
+<p align="center"><img src="../assets/framework.png" width="800"></p>
 
-### Entropy Loss
+### [Entropy Loss](https://github.com/GloryyrolG/MHEntropy/blob/master/hand/network.py#L796)
 
 ```python
 h_q_z_giv_i = -self._reverse_log_q(z, feat.repeat(N, 1), **kwargs)
@@ -49,6 +49,8 @@ to reproduce the results:
 | ----- | ----- | ---- | ----- | ---- |
 | 20.55 | 16.95 | 3.30 | 11.93 | 0.28 |
 
+[Metrics](https://github.com/GloryyrolG/MHEntropy/blob/master/hand/criteria.py#L147):
+
 `AH`: All Hypos, 2D EPE (pix);
 
 `PJD`: Per Joint Diversity; 2D Vis is the most certain while 3D Occ is the most uncertain including common occlusion & depth ambiguity;
@@ -65,4 +67,4 @@ You could leverage any [3D viewer VSCode extensions](https://github.com/stef-lev
 
 Thank [manopth](https://github.com/hassony2/manopth) for their awesome repos.
 
-It is recommended to download MANO from the [official website](https://mano.is.tue.mpg.de/) though we provide it.
+It is recommended to download MANO from the [official website](https://mano.is.tue.mpg.de/).

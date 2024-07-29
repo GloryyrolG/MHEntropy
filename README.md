@@ -1,26 +1,31 @@
-# The Official PyTorch Implementation of "MHEntropy: Multiple Hypotheses Meet Entropy for Pose and Shape Recovery" [(ICCV 2023 Paper)]()
+# The Official PyTorch Implementation of "MHEntropy: Multiple Hypotheses Meet Entropy for Pose and Shape Recovery" (ICCV 2023 Paper)
 
-[Rongyu Chen](https://gloryyrolg.github.io/), [Linlin Yang*](https://mu4yang.com/), and [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)<br>
-[National University of Singapore, School of Computing, Computer Vision & Machine Learning (CVML) Group](https://cvml.comp.nus.edu.sg/)<br>
-ICCV 2023<br>
-
-<a href='https://gloryyrolg.github.io/MHEntropy/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_MHEntropy_Entropy_Meets_Multiple_Hypotheses_for_Pose_and_Shape_Recovery_ICCV_2023_paper.pdf'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=0riX3iJeVyM)
+<p align="center">
+  <a href="https://gloryyrolg.github.io/"><strong>Rongyu Chen</strong></a>
+  ·
+  <a href="https://mu4yang.com/"><strong>Linlin Yang*</strong></a>
+  ·
+  <a href="https://www.comp.nus.edu.sg/~ayao/"><strong>Angela Yao</strong></a><br>
+  <a href="https://cvml.comp.nus.edu.sg/"><strong>National University of Singapore, School of Computing, Computer Vision & Machine Learning (CVML) Group</strong></a><br>
+  ICCV 2023<br>
+  <a href='https://gloryyrolg.github.io/MHEntropy/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> <a href='https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_MHEntropy_Entropy_Meets_Multiple_Hypotheses_for_Pose_and_Shape_Recovery_ICCV_2023_paper.pdf'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href="https://www.youtube.com/watch?v=0riX3iJeVyM"><img src="https://badges.aleen42.com/src/youtube.svg"></a>
+</p>
 
 Thanks for your interest.
 
 We mainly tackle the problem of using **only visible 2D** keypoints that are easy to annotate to train the HMR model to model **ambiguity** (occlusion, depth ambiguity, etc.) and generate multiple feasible, accurate, and diverse hypos. It also answers "*how generative models help discriminative tasks*". The key idea is that using knowledge rather than data samples to define the target data distribution under a probabilistic framework, KLD will naturally derive a missing **entropy** term.
 
-[<img src="./assets/framework.png" width="800"/>]()
+<p align="center"><img src="./assets/framework.png" width="800"></p>
 
 ## Hands
 
-[<img src="./assets/teaser.png" width="300"/>]()
+<p align="center"><img src="./assets/teaser.png" width="300"></p>
 
 Please find the hand experiments [here](https://github.com/GloryyrolG/MHEntropy/blob/master/hand/README.md).
 
 ## Humans
 
-[<img src="./assets/humans.png" width="500"/>]()
+<p align="center"><img src="./assets/humans.png" width="500"></p>
 
 Our method can be adapted to a variety of backbone models. Simply use the [ProHMR code repo](https://github.com/nkolot/ProHMR/tree/master) to load our [pre-trained model weights](https://drive.google.com/file/d/19gaxHvpTB5f6ojYECSc8uXXdLtghTxGC/view?usp=sharing) to perform inference and evaluation.
 
